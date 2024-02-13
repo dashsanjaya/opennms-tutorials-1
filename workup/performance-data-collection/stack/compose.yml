@@ -1,0 +1,100 @@
+---
+version: '3'
+
+volumes:
+  data-postgres: {}
+  data-grafana: {}
+
+# 192.168.42.1     - reserved for internal docker routing
+# 192.168.42.8-31  - internal OpenNMS services
+# 192.168.42.32-63 - free for user
+networks:
+  net-onms:
+    ipam:
+      config:
+        - subnet: 192.168.42.0/26
+
+services:
+  database:
+    image: postgres:15-alpine
+    environment:
+      TZ: Europe/Berlin
+      POSTGRES_HOST: database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - data-postgres:/var/lib/postgresql/data
+    networks:
+      net-onms:
+        ipv4_address: 192.168.42.8
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+
+  core:
+    image: opennms/horizon:32.0.6
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      TZ: Europe/Berlin
+    volumes:
+      - ./core-etc:/opt/opennms/etc
+      - ./core-deploy:/opt/opennms/deploy
+      - ./core-data:/opennms-data
+    networks:
+      net-onms:
+        ipv4_address: 192.168.42.9
+    command: ["-s"]
+    ports:
+      - "8101:8101/tcp"
+      - "8980:8980/tcp"
+      - "162:10162/udp"
+      - "514:10514/udp"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "-I", "http://localhost:8980/opennms/login.jsp" ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  grafana:
+    image: grafana/grafana:10.3.1
+    depends_on:
+      core:
+        condition: service_started
+    networks:
+      net-onms:
+        ipv4_address: 192.168.42.10
+    environment:
+      TZ: Europe/Berlin
+      GF_INSTALL_PLUGINS: opennms-opennms-app
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_AUTH_ANONYMOUS_ENABLED: true
+      GF_AUTH_BASIC_ENABLED: false
+    volumes:
+      - data-grafana:/var/lib/grafana
+      - ./grafana:/etc/grafana/provisioning/
+    ports:
+      - "3000:3000/tcp"
+
+  linux-01:
+    image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
+    environment:
+      TZ: Europe/Berlin
+    networks:
+      net-onms:
+        ipv4_address: 192.168.42.32
+    ports:
+      - "1610:161/udp"
+
+  linux-02:
+    image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
+    environment:
+      TZ: Europe/Berlin
+    networks:
+      net-onms:
+        ipv4_address: 192.168.42.33
+    ports:
+      - "1611:161/udp"

@@ -54,3 +54,8 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
+
+# Container stack configuration files
+core-etc/
+core-data/
+core-deploy/

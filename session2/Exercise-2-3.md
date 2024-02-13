@@ -135,11 +135,11 @@ Using the mib browser or netsnmp, try sending the traps you previously sent and 
 
 docker compose exec netsnmp_1_1 bash
 
-# send an example trap definition 1 RAISE trap to meridian port 1162 using netsnmp
+# send an example trap definition 1 RAISE trap to horizon port 1162 using netsnmp
 
 snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0  s xxxx   .1.3.6.1.4.1.52330.6.2.1.0 i 0  .1.3.6.1.4.1.52330.6.2.5.0 i 1
 
-# send an example trap definition 1 CLEAR trap to meridian port 1162 using netsnmp
+# send an example trap definition 1 CLEAR trap to horizon port 1162 using netsnmp
 
 snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0  s xxxx   .1.3.6.1.4.1.52330.6.2.1.0 i 0  .1.3.6.1.4.1.52330.6.2.5.0 i 0
 
