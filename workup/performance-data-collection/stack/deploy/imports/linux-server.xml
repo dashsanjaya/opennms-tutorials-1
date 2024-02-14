@@ -17,4 +17,13 @@
     <asset name="longitude" value="9.1685303"/>
     <asset name="latitude" value="48.8258763"/>
   </node>
+
+  <node location="Default" foreign-id="linux-03" node-label="linux-03">
+    <interface ip-addr="192.168.42.34" status="1" snmp-primary="P">
+      <monitored-service service-name="ICMP"/>
+      <monitored-service service-name="SNMP"/>
+    </interface>
+    <asset name="longitude" value="9.1685303"/>
+    <asset name="latitude" value="48.8258763"/>
+  </node>
 </model-import>

@@ -81,20 +81,37 @@ services:
 
   linux-01:
     image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
+    hostname: linux-01
     environment:
       TZ: Europe/Berlin
     networks:
       net-onms:
         ipv4_address: 192.168.42.32
+    volumes:
+      - ./netsnmp/linux-01/sysinfo.conf:/etc/snmp/conf.d/sysinfo.conf
     ports:
       - "1610:161/udp"
 
   linux-02:
     image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
+    hostname: linux-02
     environment:
       TZ: Europe/Berlin
     networks:
       net-onms:
         ipv4_address: 192.168.42.33
+    volumes:
+      - ./netsnmp/linux-02/sysinfo.conf:/etc/snmp/conf.d/sysinfo.conf
     ports:
       - "1611:161/udp"
+
+  linux-03:
+    image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
+    hostname: linux-03
+    environment:
+      TZ: Europe/Berlin
+    networks:
+      net-onms:
+        ipv4_address: 192.168.42.34
+    ports:
+      - "1612:161/udp"
