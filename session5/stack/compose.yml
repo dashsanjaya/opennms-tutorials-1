@@ -34,7 +34,7 @@ services:
       retries: 3
 
   core:
-    image: opennms/horizon:32.0.6
+    image: opennms/horizon:33.0.1
     depends_on:
       database:
         condition: service_healthy

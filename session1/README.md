@@ -12,6 +12,8 @@
 * SNMP community strings
 * Importing a network - requisitions
 
+[Session 1 Video](https://youtu.be/NYE9KmMtooY)
+
 ## What is OpenNMS
 
 ### Overview

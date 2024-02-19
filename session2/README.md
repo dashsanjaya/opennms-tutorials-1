@@ -10,6 +10,8 @@
 * basic events alarms and traps
 * parsing a mib and creating an event configuration
 
+[Session 2 Video](https://youtu.be/7PUvTShOOkI) (unfortunately shortened due to illness)
+
 
 ## OpenNMS Configuration Overview
 
@@ -139,6 +141,6 @@ Each alarm will maintain count and a list of events contributing to the alarm st
 
 In [Exercise-2-2](../session2/Exercise-2-2.md) we will do some simple examples inject traps into OpenNMS.
 
-In [Exercise-2-3](../session2/Exercise-2-3.md) we will do some simple examples to help explain how  OpenNNMS traps and alarms are configured.
+In [Exercise-2-3](../session2/Exercise-2-3.md) we will do some simple examples to help explain how  OpennNMS traps and alarms are configured.
 
 In the next [Session 3](../session3/README.md) we will consolidate our learning with a more complex example which imports events from an SNMP MIB.

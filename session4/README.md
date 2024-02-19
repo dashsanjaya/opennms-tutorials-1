@@ -1,10 +1,10 @@
-# Session 4
+# Session 4 - Additional Event and Alarm Enrichment
 
 [Main Menu](../README.md) | [Session 42](../session4/README.md)
 
 
 TBD
-miscelaneous
+
 
 Event Translator
 
