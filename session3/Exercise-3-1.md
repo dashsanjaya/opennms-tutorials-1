@@ -131,5 +131,31 @@ Having created your configuration, load it into OpenNMS and start sending some n
 # Summary
 Once we have completed this exercise we have grasped a good understanding of event processing in OpenNMS.
 
+In [Example Configurations](../session3/minimal-minion-activemq/example-configurations/) you will see two approaches to decoding the alarms.
+
+The simple approach merely adds a varbind substitution  to the reduction and clear keys.
+
+If varbind1 determines the cause of the alarm, we need to use this to uniquely distinguish which alarm is being raised or cleared on a device.
+
+In a type 1 alarm (raise), this is appended to the reduction-key
+
+```
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#1]%" alarm-type="1" auto-clean="false" />
+```
+
+In  type 2 alarm (clear), this is also appended to the clear key
+
+```      
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#1]%" alarm-type="2"
+         clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChange:%dpname%:%nodeid%:%parm[#1]%" auto-clean="false" />
+
+```
+
+This simple approach works well but it has the significant disadvantage that all of the events and alarms defined this way will have the same severity.
+They also still have to have the same text (albeit with text substitution).
+
+A more complete approach fully decodes all of the problem causes into separate events. 
+This is more work but it allows full flexibility as to the text content and the severity of each configured event and alarm.
+
 [Session 4](../session4/README.md)  will look at some more advanced event and alarm processing techniques.
 

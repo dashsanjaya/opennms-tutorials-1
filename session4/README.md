@@ -14,10 +14,5 @@ event from ReST / Rester
 
 business service monitoring
 
-scriptd example
 
-kafka example - forwarding alarms
-
-advanced
-
-introduction to drools rules
+[Exercise-4-1](../session4/Exercise-4-1.md) creates an example event translator.

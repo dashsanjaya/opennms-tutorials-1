@@ -158,17 +158,17 @@ Commits to master will be stored in a local branch, upstream/master.
 ```
 git fetch upstream
 From https://github.com/gallenc/opennms-tutorials-1
- * [new branch]      master     -> upstream/master
+ * [new branch]      master     -> upstream/main
 remote: Enumerating objects: 18, done.
 remote: Counting objects: 100% (18/18), done.
 remote: Compressing objects: 100% (7/7), done.
 remote: Total 12 (delta 3), reused 12 (delta 3), pack-reused 0
 Unpacking objects: 100% (12/12), done.
 From https://github.com/gallenc/opennms-tutorials-1
-   ddd9643..bd85c0d  master     -> upstream/master
+   ddd9643..bd85c0d  master     -> upstream/main
 ```
 
-2. Check out your fork's local master branch.
+2. Check out your fork's local main branch.
 ```
 git checkout master
 Switched to branch 'master'
@@ -211,7 +211,7 @@ To https://github.com/gallenc-test/opennms-tutorials-1.git
 
 git status
 On branch master
-Your branch is up-to-date with 'origin/master'.
+Your branch is up-to-date with 'origin/main'.
 nothing to commit, working directory clean
 
 ```
@@ -227,8 +227,8 @@ Once the upstream is set use
 
 ```
 git fetch upstream
-git checkout master
-git merge upstream/master
+git checkout main
+git merge upstream/main
 git push
 
 ```

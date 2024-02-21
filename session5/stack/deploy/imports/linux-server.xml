@@ -3,7 +3,7 @@
   <node location="Default" foreign-id="linux-01" node-label="linux-01">
     <interface ip-addr="192.168.42.32" status="1" snmp-primary="P">
       <monitored-service service-name="ICMP"/>
-      <monitored-service service-name="SNMP-Custom-Agent"/>
+      <monitored-service service-name="SNMP"/>
     </interface>
     <asset name="longitude" value="9.1685303"/>
     <asset name="latitude" value="48.8258763"/>
@@ -12,7 +12,7 @@
   <node location="Default" foreign-id="linux-02" node-label="linux-02">
     <interface ip-addr="192.168.42.33" status="1" snmp-primary="P">
       <monitored-service service-name="ICMP"/>
-      <monitored-service service-name="SNMP-Custom-Agent"/>
+      <monitored-service service-name="SNMP"/>
     </interface>
     <asset name="longitude" value="9.1685303"/>
     <asset name="latitude" value="48.8258763"/>

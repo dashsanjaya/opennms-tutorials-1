@@ -80,7 +80,7 @@
          <decode varbindvalue="0" varbinddecodedstring="clear" />
          <decode varbindvalue="1" varbinddecodedstring="triggered" />
       </varbindsdecode>
-      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false" />
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#1]%" alarm-type="1" auto-clean="false" />
    </event>
 
    <event>
@@ -160,9 +160,9 @@
          <decode varbindvalue="0" varbinddecodedstring="clear" />
          <decode varbindvalue="1" varbinddecodedstring="triggered" />
       </varbindsdecode>
-      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" 
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#1]%" 
          alarm-type="2"
-         clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeRAISE:%dpname%:%nodeid%" 
+         clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeRAISE:%dpname%:%nodeid%:%parm[#1]%" 
          auto-clean="false" />
    </event>
 
@@ -310,7 +310,7 @@
          <decode varbindvalue="0" varbinddecodedstring="clear" />
          <decode varbindvalue="1" varbinddecodedstring="triggered" />
       </varbindsdecode>
-      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false" />
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#1]%" alarm-type="1" auto-clean="false" />
    </event>
 
    <event>
@@ -359,9 +359,9 @@
          <decode varbindvalue="0" varbinddecodedstring="clear" />
          <decode varbindvalue="1" varbinddecodedstring="triggered" />
       </varbindsdecode>
-      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" 
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#1]%" 
          alarm-type="2"
-         clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChangeRAISE:%dpname%:%nodeid%" 
+         clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChangeRAISE:%dpname%:%nodeid%:%parm[#1]%" 
          auto-clean="false" />
    </event>
 

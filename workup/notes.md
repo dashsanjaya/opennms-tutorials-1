@@ -19,7 +19,7 @@ traps
 events
 alarms 
 
-
+https://creativetechguy.com/utilities/clock#seconds
 
 
 Events 

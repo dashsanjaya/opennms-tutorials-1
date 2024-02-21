@@ -1,0 +1,3014 @@
+<events xmlns="http://xmlns.opennms.org/xsd/eventconf">
+
+<!-- ******************************************************** -->
+<!--  panMotor healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/panMotor</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange panMotor</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- panMotor healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/panMotor-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear panMotor-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/panMotor:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+<!-- ******************************************************** -->
+<!--  tiltMotor healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/tiltMotor</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange tiltMotor</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- tiltMotor healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/tiltMotor-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear tiltMotor-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/tiltMotor:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+<!-- ******************************************************** -->
+<!--  zoomMotor healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>2</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/zoomMotor</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange zoomMotor</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- zoomMotor healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>2</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/zoomMotor-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear zoomMotor-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/zoomMotor:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+   
+
+<!-- ******************************************************** -->
+<!--  apertureMotor healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>3</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/apertureMotor</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange apertureMotor</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- apertureMotor healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>3</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/apertureMotor-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear apertureMotor-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/apertureMotor:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+   
+
+<!-- ******************************************************** -->
+<!--  focusMotor healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>4</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/focusMotor</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange focusMotor</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- focusMotor healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>4</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/focusMotor-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear focusMotor-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/focusMotor:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+<!-- ******************************************************** -->
+<!--  wiperMotor healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>5</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/wiperMotor</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange wiperMotor</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- wiperMotor healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>5</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/wiperMotor-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear wiperMotor-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/wiperMotor:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+<!-- ******************************************************** -->
+<!--  heater healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>6</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/heater</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange heater</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- heater healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>6</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/heater-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear heater-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/heater:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+<!-- ******************************************************** -->
+<!--  fluidLevel healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>7</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/fluidLevel</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange fluidLevel</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- fluidLevel healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>7</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/fluidLevel-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear fluidLevel-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/fluidLevel:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+<!-- ******************************************************** -->
+<!--  videoSignal healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>8</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/videoSignal</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange videoSignal</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- videoSignal healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>8</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/videoSignal-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear videoSignal-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/videoSignal:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+<!-- ******************************************************** -->
+<!--  housingTamper healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>9</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/housingTamper</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange housingTamper</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- housingTamper healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>9</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/housingTamper-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear housingTamper-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/housingTamper:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+<!-- ******************************************************** -->
+<!--  washerMotorFault healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>10</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/washerMotorFault</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange washerMotorFault</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- washerMotorFault healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>10</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/washerMotorFault-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear washerMotorFault-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/washerMotorFault:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+<!-- ******************************************************** -->
+<!--  configPlugFault healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>11</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/configPlugFault</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange configPlugFault</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- configPlugFault healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>11</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/configPlugFault-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear configPlugFault-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/configPlugFault:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+<!-- ******************************************************** -->
+<!--  tvbuCameraCommsFault healthChange trap RAISE                        -->
+<!-- ******************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>12</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/tvbuCameraCommsFault</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange tvbuCameraCommsFault</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+<!-- ****************************************************** -->
+<!-- tvbuCameraCommsFault healthChange trap  CLEAR ********************* -->
+<!-- ****************************************************** -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>12</vbvalue>
+         </varbind>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/tvbuCameraCommsFault-clear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear tvbuCameraCommsFault-clear</event-label>
+      <descr>
+&lt;p>This notification is sent when one or more of the health
+         information changes. Show the fault item and its state. &lt;/p>&lt;table>
+   &lt;tr>&lt;td>&lt;b>
+
+   cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+   %parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   healthChangeReason&lt;/b>&lt;/td>&lt;td>
+   %parm[#2]%;&lt;/td>&lt;td>&lt;p>
+      panMotor(0)
+      tiltMotor(1)
+      zoomMotor(2)
+      apertureMotor(3)
+      focusMotor(4)
+      wiperMotor(5)
+      heater(6)
+      fluidLevel(7)
+      videoSignal(8)
+      housingTamper(9)
+      washerMotorFault(10)
+      configPlugFault(11)
+      tvbuCameraCommsFault(12)
+   &lt;/p>&lt;/td>&lt;/tr>
+   &lt;tr>&lt;td>&lt;b>
+
+   faultState&lt;/b>&lt;/td>&lt;td>
+   %parm[#3]%;&lt;/td>&lt;td>&lt;p>
+      clear(0)
+      triggered(1)
+   &lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+   </descr>
+      <logmsg dest="logndisplay">&lt;p>
+   healthChange trap received
+   cameraIdentifier=%parm[#1]%
+   healthChangeReason=%parm[#2]%
+   faultState=%parm[#3]%&lt;/p>
+   </logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="panMotor"/>
+         <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/>
+         <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/>
+         <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/>
+         <decode varbindvalue="4" varbinddecodedstring="focusMotor"/>
+         <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/>
+         <decode varbindvalue="6" varbinddecodedstring="heater"/>
+         <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/>
+         <decode varbindvalue="8" varbinddecodedstring="videoSignal"/>
+         <decode varbindvalue="9" varbinddecodedstring="housingTamper"/>
+         <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/>
+         <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/>
+         <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/>
+      </varbindsdecode>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/tvbuCameraCommsFault:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+
+<!-- ********************************************************************* -->
+<!--  GENERIC healthChange trap RAISE ************************************ -->
+<!-- this has been replaced wuth specific events per decode varbind types  -->
+<!-- ********************************************************************* -->
+
+
+<!--    <event> -->
+<!--       <mask> -->
+<!--          <maskelement> -->
+<!--             <mename>id</mename> -->
+<!--             <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue> -->
+<!--          </maskelement> -->
+<!--          <maskelement> -->
+<!--             <mename>generic</mename> -->
+<!--             <mevalue>6</mevalue> -->
+<!--          </maskelement> -->
+<!--          <maskelement> -->
+<!--             <mename>specific</mename> -->
+<!--             <mevalue>1</mevalue> -->
+<!--          </maskelement> -->
+<!--          <varbind> -->
+<!--              <vbnumber>3</vbnumber> -->
+<!--              <vbvalue>1</vbvalue> -->
+<!--          </varbind> -->
+<!--       </mask> -->
+<!--       <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange</uei> -->
+<!--       <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChange</event-label> -->
+<!--       <descr> -->
+<!-- &lt;p>This notification is sent when one or more of the health -->
+<!--          information changes. Show the fault item and its state. &lt;/p>&lt;table> -->
+<!-- 	&lt;tr>&lt;td>&lt;b> -->
+
+<!-- 	cameraIdentifier&lt;/b>&lt;/td>&lt;td> -->
+<!-- 	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr> -->
+<!-- 	&lt;tr>&lt;td>&lt;b> -->
+
+<!-- 	healthChangeReason&lt;/b>&lt;/td>&lt;td> -->
+<!-- 	%parm[#2]%;&lt;/td>&lt;td>&lt;p> -->
+<!-- 		panMotor(0) -->
+<!-- 		tiltMotor(1) -->
+<!-- 		zoomMotor(2) -->
+<!-- 		apertureMotor(3) -->
+<!-- 		focusMotor(4) -->
+<!-- 		wiperMotor(5) -->
+<!-- 		heater(6) -->
+<!-- 		fluidLevel(7) -->
+<!-- 		videoSignal(8) -->
+<!-- 		housingTamper(9) -->
+<!-- 		washerMotorFault(10) -->
+<!-- 		configPlugFault(11) -->
+<!-- 		tvbuCameraCommsFault(12) -->
+<!-- 	&lt;/p>&lt;/td>&lt;/tr> -->
+<!-- 	&lt;tr>&lt;td>&lt;b> -->
+
+<!-- 	faultState&lt;/b>&lt;/td>&lt;td> -->
+<!-- 	%parm[#3]%;&lt;/td>&lt;td>&lt;p> -->
+<!-- 		clear(0) -->
+<!-- 		triggered(1) -->
+<!-- 	&lt;/p>&lt;/td>&lt;/tr>&lt;/table> -->
+<!-- 	</descr> -->
+<!--       <logmsg dest="logndisplay">&lt;p> -->
+<!-- 	healthChange trap received -->
+<!-- 	cameraIdentifier=%parm[#1]% -->
+<!-- 	healthChangeReason=%parm[#2]% -->
+<!-- 	faultState=%parm[#3]%&lt;/p> -->
+<!-- 	</logmsg> -->
+<!--       <severity>Warning</severity> -->
+<!--       <varbindsdecode> -->
+<!--          <parmid>parm[#2]</parmid> -->
+<!--          <decode varbindvalue="0" varbinddecodedstring="panMotor"/> -->
+<!--          <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/> -->
+<!--          <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/> -->
+<!--          <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/> -->
+<!--          <decode varbindvalue="4" varbinddecodedstring="focusMotor"/> -->
+<!--          <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/> -->
+<!--          <decode varbindvalue="6" varbinddecodedstring="heater"/> -->
+<!--          <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/> -->
+<!--          <decode varbindvalue="8" varbinddecodedstring="videoSignal"/> -->
+<!--          <decode varbindvalue="9" varbinddecodedstring="housingTamper"/> -->
+<!--          <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/> -->
+<!--          <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/> -->
+<!--          <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/> -->
+<!--       </varbindsdecode> -->
+<!--       <varbindsdecode> -->
+<!--          <parmid>parm[#3]</parmid> -->
+<!--          <decode varbindvalue="0" varbinddecodedstring="clear"/> -->
+<!--          <decode varbindvalue="1" varbinddecodedstring="triggered"/> -->
+<!--       </varbindsdecode> -->
+<!--       <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#2]%" alarm-type="1" auto-clean="false"/> -->
+<!--    </event> -->
+
+
+<!-- ********************************************************************* -->
+<!-- GENERIC healthChange trap  CLEAR ************************************ -->
+<!-- this has been replaced wuth specific events per decode varbind types  -->
+<!-- ********************************************************************* -->
+
+<!--    <event> -->
+<!--       <mask> -->
+<!--          <maskelement> -->
+<!--             <mename>id</mename> -->
+<!--             <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue> -->
+<!--          </maskelement> -->
+<!--          <maskelement> -->
+<!--             <mename>generic</mename> -->
+<!--             <mevalue>6</mevalue> -->
+<!--          </maskelement> -->
+<!--          <maskelement> -->
+<!--             <mename>specific</mename> -->
+<!--             <mevalue>1</mevalue> -->
+<!--          </maskelement> -->
+<!--          <varbind> -->
+<!--              <vbnumber>3</vbnumber> -->
+<!--              <vbvalue>0</vbvalue> -->
+<!--          </varbind> -->
+<!--       </mask> -->
+<!--       <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear</uei> -->
+<!--       <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: healthChangeClear</event-label> -->
+<!--       <descr> -->
+<!-- &lt;p>This notification is sent when one or more of the health -->
+<!--          information changes. Show the fault item and its state. &lt;/p>&lt;table> -->
+<!-- 	&lt;tr>&lt;td>&lt;b> -->
+
+<!-- 	cameraIdentifier&lt;/b>&lt;/td>&lt;td> -->
+<!-- 	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr> -->
+<!-- 	&lt;tr>&lt;td>&lt;b> -->
+
+<!-- 	healthChangeReason&lt;/b>&lt;/td>&lt;td> -->
+<!-- 	%parm[#2]%;&lt;/td>&lt;td>&lt;p> -->
+<!-- 		panMotor(0) -->
+<!-- 		tiltMotor(1) -->
+<!-- 		zoomMotor(2) -->
+<!-- 		apertureMotor(3) -->
+<!-- 		focusMotor(4) -->
+<!-- 		wiperMotor(5) -->
+<!-- 		heater(6) -->
+<!-- 		fluidLevel(7) -->
+<!-- 		videoSignal(8) -->
+<!-- 		housingTamper(9) -->
+<!-- 		washerMotorFault(10) -->
+<!-- 		configPlugFault(11) -->
+<!-- 		tvbuCameraCommsFault(12) -->
+<!-- 	&lt;/p>&lt;/td>&lt;/tr> -->
+<!-- 	&lt;tr>&lt;td>&lt;b> -->
+
+<!-- 	faultState&lt;/b>&lt;/td>&lt;td> -->
+<!-- 	%parm[#3]%;&lt;/td>&lt;td>&lt;p> -->
+<!-- 		clear(0) -->
+<!-- 		triggered(1) -->
+<!-- 	&lt;/p>&lt;/td>&lt;/tr>&lt;/table> -->
+<!-- 	</descr> -->
+<!--       <logmsg dest="logndisplay">&lt;p> -->
+<!-- 	healthChange trap received -->
+<!-- 	cameraIdentifier=%parm[#1]% -->
+<!-- 	healthChangeReason=%parm[#2]% -->
+<!-- 	faultState=%parm[#3]%&lt;/p> -->
+<!-- 	</logmsg> -->
+<!--       <severity>Cleared</severity> -->
+<!--       <varbindsdecode> -->
+<!--          <parmid>parm[#2]</parmid> -->
+<!--          <decode varbindvalue="0" varbinddecodedstring="panMotor"/> -->
+<!--          <decode varbindvalue="1" varbinddecodedstring="tiltMotor"/> -->
+<!--          <decode varbindvalue="2" varbinddecodedstring="zoomMotor"/> -->
+<!--          <decode varbindvalue="3" varbinddecodedstring="apertureMotor"/> -->
+<!--          <decode varbindvalue="4" varbinddecodedstring="focusMotor"/> -->
+<!--          <decode varbindvalue="5" varbinddecodedstring="wiperMotor"/> -->
+<!--          <decode varbindvalue="6" varbinddecodedstring="heater"/> -->
+<!--          <decode varbindvalue="7" varbinddecodedstring="fluidLevel"/> -->
+<!--          <decode varbindvalue="8" varbinddecodedstring="videoSignal"/> -->
+<!--          <decode varbindvalue="9" varbinddecodedstring="housingTamper"/> -->
+<!--          <decode varbindvalue="10" varbinddecodedstring="washerMotorFault"/> -->
+<!--          <decode varbindvalue="11" varbinddecodedstring="configPlugFault"/> -->
+<!--          <decode varbindvalue="12" varbinddecodedstring="tvbuCameraCommsFault"/> -->
+<!--       </varbindsdecode> -->
+<!--       <varbindsdecode> -->
+<!--          <parmid>parm[#3]</parmid> -->
+<!--          <decode varbindvalue="0" varbinddecodedstring="clear"/> -->
+<!--          <decode varbindvalue="1" varbinddecodedstring="triggered"/> -->
+<!--       </varbindsdecode> -->
+<!--       <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#2]%" -->
+<!--                   alarm-type="2" -->
+<!--                   clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange:%dpname%:%nodeid%:%parm[#2]%" -->
+<!--                   auto-clean="false"/> -->
+<!--    </event> -->
+
+
+<!-- ********************************************************* -->
+<!-- tamperDetected trap  RAISE ****************************** -->
+<!-- ********************************************************* -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>2</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/tamperDetected</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: tamperDetected</event-label>
+      <descr>
+&lt;p>This notification is sent on detection of tampering.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	tamperState&lt;/b>&lt;/td>&lt;td>
+	%parm[#2]%;&lt;/td>&lt;td>&lt;p>
+		clear(0)
+		triggered(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+        tamperDetected trap received
+	    cameraIdentifier=%parm[#1]%
+	    tamperState=%parm[#2]%&lt;/p>
+	</logmsg>
+      <severity>Major</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+     <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+   
+<!-- ********************************************************* -->
+<!-- tamperDetected trap  CLEAR ****************************** -->
+<!-- ********************************************************* -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>2</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/tamperDetectedCleared</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: tamperDetected Cleared</event-label>
+      <descr>
+&lt;p>This notification is sent on detection of tampering.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	tamperState&lt;/b>&lt;/td>&lt;td>
+	%parm[#2]%;&lt;/td>&lt;td>&lt;p>
+		clear(0)
+		triggered(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+        tamperDetected trap received
+	    cameraIdentifier=%parm[#1]%
+	    tamperState=%parm[#2]%&lt;/p>
+	</logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+            <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/tamperDetected:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+   </event>
+
+
+
+<!-- ********************************************************* -->
+<!-- logicInputChange trap RAISE ***************************** -->
+<!-- ********************************************************* -->
+
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>3</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChange</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: logicInputChange</event-label>
+      <descr>
+&lt;p>This notification is sent on detection of a logic input change.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	logicInput&lt;/b>&lt;/td>&lt;td>
+	%parm[#2]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	logicInputState&lt;/b>&lt;/td>&lt;td>
+	%parm[#3]%;&lt;/td>&lt;td>&lt;p>
+		clear(0)
+		triggered(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	logicInputChange trap received
+	cameraIdentifier=%parm[#1]%
+	logicInput=%parm[#2]%
+	logicInputState=%parm[#3]%&lt;/p>
+	</logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+     <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#2]%" alarm-type="1" auto-clean="false"/>
+
+   </event>
+   
+
+<!-- ********************************************************* -->
+<!-- logicInputChange trap CLEAR ***************************** -->
+<!-- ********************************************************* -->
+   
+    <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>3</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>3</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChangeCleared</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: logicInputChange Cleared</event-label>
+      <descr>
+&lt;p>This notification is sent on detection of a logic input change.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	logicInput&lt;/b>&lt;/td>&lt;td>
+	%parm[#2]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	logicInputState&lt;/b>&lt;/td>&lt;td>
+	%parm[#3]%;&lt;/td>&lt;td>&lt;p>
+		clear(0)
+		triggered(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	logicInputChange trap received
+	cameraIdentifier=%parm[#1]%
+	logicInput=%parm[#2]%
+	logicInputState=%parm[#3]%&lt;/p>
+	</logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#3]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="clear"/>
+         <decode varbindvalue="1" varbinddecodedstring="triggered"/>
+      </varbindsdecode>
+            <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%parm[#2]%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChange:%dpname%:%nodeid%:%parm[#2]%"
+                  auto-clean="false"/>
+
+   </event>  
+   
+   
+<!-- ********************************************************* -->
+<!-- commsStateChange trap RAISE ***************************** -->
+<!-- ********************************************************* -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>4</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChange</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: commsStateChange</event-label>
+      <descr>
+&lt;p>This notification is sent on communication state change.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	commsStateReason&lt;/b>&lt;/td>&lt;td>
+	%parm[#2]%;&lt;/td>&lt;td>&lt;p>
+		good(0)
+		faulty(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	commsStateChange trap received
+	cameraIdentifier=%parm[#1]%
+	commsStateReason=%parm[#2]%&lt;/p>
+	</logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="good"/>
+         <decode varbindvalue="1" varbinddecodedstring="faulty"/>
+      </varbindsdecode>
+      
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+   
+   
+<!-- ********************************************************* -->
+<!-- commsStateChange trap CLEAR ***************************** -->
+<!-- ********************************************************* -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.52330.6.2</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>4</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>2</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChangeClear</uei>
+      <event-label>CHUBB-TVBS-CAMERA-MIB defined trap event: commsStateChange Clear</event-label>
+      <descr>
+&lt;p>This notification is sent on communication state change.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	cameraIdentifier&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>
+	&lt;tr>&lt;td>&lt;b>
+
+	commsStateReason&lt;/b>&lt;/td>&lt;td>
+	%parm[#2]%;&lt;/td>&lt;td>&lt;p>
+		good(0)
+		faulty(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	commsStateChange trap received
+	cameraIdentifier=%parm[#1]%
+	commsStateReason=%parm[#2]%&lt;/p>
+	</logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#2]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="good"/>
+         <decode varbindvalue="1" varbinddecodedstring="faulty"/>
+      </varbindsdecode>
+      
+            <alarm-data reduction-key="%uei%:%dpname%:%nodeid%"
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChange:%dpname%:%nodeid%"
+                  auto-clean="false"/>
+
+   </event>
+
+</events>

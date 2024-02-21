@@ -17,13 +17,11 @@ Please read and follow the Getting Started instructions before doing anything el
 
 [session4](../main/session4/) Further Event and Alarm Enrichment Examples
 
-[session5](../main/session5/) 
+[session5](../main/session5/) Performance Data Collection 1
 
-[session6](../main/session6/) 
+[session6](../main/session6/) Performance Data Collection 2
 
-[session7](../main/session7/) 
-
-[session8](../main/session8/) 
+[session7](../main/session7/) Additional Topics and wrap up
 
 [myPracticeCourseWork](../main/myPracticeCourseWork) This is where you should create and save your own practice projects.
 

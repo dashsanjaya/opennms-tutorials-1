@@ -4,3 +4,11 @@
 
 
 TBD
+
+scriptd example
+
+kafka example - forwarding alarms
+
+advanced
+
+introduction to drools rules

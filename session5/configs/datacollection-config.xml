@@ -7,6 +7,7 @@
          <rra>RRA:MAX:0.5:288:366</rra>
          <rra>RRA:MIN:0.5:288:366</rra>
       </rrd>
+      <include-collection dataCollectionGroup="exercise_5.1-group"/>
       <include-collection dataCollectionGroup="MIB2"/>
       <include-collection dataCollectionGroup="3Com"/>
       <include-collection dataCollectionGroup="Acme Packet"/>
@@ -105,16 +106,5 @@
          <rra>RRA:MIN:0.5:480:366</rra>
       </rrd>
       <include-collection dataCollectionGroup="ejn"/>
-   </snmp-collection>
-
-   <snmp-collection name="tutorial-snmp-collection" snmpStorageFlag="select">
-      <rrd step="30">
-         <rra>RRA:AVERAGE:0.5:1:20160</rra>
-         <rra>RRA:AVERAGE:0.5:12:14880</rra>
-         <rra>RRA:AVERAGE:0.5:288:3660</rra>
-         <rra>RRA:MAX:0.5:288:3660</rra>
-         <rra>RRA:MIN:0.5:288:3660</rra>
-      </rrd>
-      <include-collection dataCollectionGroup="tutorial-snmp-collection-group"/>
    </snmp-collection>
 </datacollection-config>

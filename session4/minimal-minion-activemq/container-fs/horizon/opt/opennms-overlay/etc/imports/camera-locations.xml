@@ -1,0 +1,41 @@
+<model-import xmlns="http://xmlns.opennms.org/xsd/config/model-import" date-stamp="2024-02-20T17:14:45.591-05:00" foreign-source="camera-locations"
+   last-import="2024-02-20T17:15:22.466-05:00">
+   <node foreign-id="camera_001" node-label="camera_001">
+      <asset name="latitude" value="50.959710" />
+      <asset name="longitude" value="-1.421292" />
+   </node>
+   <node foreign-id="camera_002" node-label="camera_002">
+      <asset name="latitude" value="50.959109" />
+      <asset name="longitude" value="-1.422666" />
+   </node>
+   <node foreign-id="camera_003" node-label="camera_003">
+      <asset name="latitude" value="50.959109" />
+      <asset name="longitude" value="-1.394565" />
+   </node>
+   <node foreign-id="camera_004" node-label="camera_004">
+      <asset name="latitude" value="50.960794" />
+      <asset name="longitude" value="-1.394444" />
+   </node>
+   <node foreign-id="camera_005" node-label="camera_005">
+      <asset name="latitude" value="50.961472" />
+      <asset name="longitude" value="-1.388697" />
+   </node>
+   <node foreign-id="camera_006" node-label="camera_006">
+      <asset name="latitude" value="50.960972" />
+      <asset name="longitude" value="-1.388504" />
+   </node>
+   <node foreign-id="camera_007" node-label="camera_007">
+      <asset name="latitude" value="50.959191" />
+      <asset name="longitude" value="-1.396255" />
+   </node>
+   <node foreign-id="camera_008" node-label="camera_008">
+      <asset name="latitude" value="50.958623" />
+      <asset name="longitude" value="-1.395536" />
+   </node>
+   <node foreign-id="camera-controller" node-label="camera-controller">
+      <interface ip-addr="172.20.0.150" status="1" snmp-primary="P">
+         <monitored-service service-name="ICMP"/>
+         <monitored-service service-name="SNMP"/>
+      </interface>
+   </node>
+</model-import>

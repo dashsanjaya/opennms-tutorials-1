@@ -4,6 +4,8 @@ version: '3'
 volumes:
   data-postgres: {}
   data-grafana: {}
+  data-core-etc: {}
+  data-core: {}
 
 # 192.168.42.1     - reserved for internal docker routing
 # 192.168.42.8-31  - internal OpenNMS services
@@ -34,16 +36,15 @@ services:
       retries: 3
 
   core:
-    image: opennms/horizon:33.0.1
+    image: opennms/horizon:32.0.5
     depends_on:
       database:
         condition: service_healthy
     environment:
       TZ: Europe/Berlin
     volumes:
-      - ./core-etc:/opt/opennms/etc
-      - ./core-deploy:/opt/opennms/deploy
-      - ./core-data:/opennms-data
+      - data-core-etc:/opt/opennms/etc
+      - data-core:/opennms-data/
     networks:
       net-onms:
         ipv4_address: 192.168.42.9
@@ -51,8 +52,6 @@ services:
     ports:
       - "8101:8101/tcp"
       - "8980:8980/tcp"
-      - "162:10162/udp"
-      - "514:10514/udp"
     healthcheck:
       test: [ "CMD", "curl", "-f", "-I", "http://localhost:8980/opennms/login.jsp" ]
       interval: 30s
