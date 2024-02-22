@@ -2,7 +2,7 @@
 
 [Main Menu](../workup/README.md) | [Session 5](../session5/README.md)
 
-[performance-management-Introduction.pdf](../session4/minimal-minion-activemq/performance-management-Introduction.pdf) Slides for this session.
+[performance-management-Introduction.pdf](../session5/performance-management-Introduction.pdf) Slides for this session.
 
 [Session 5 Video](https://youtu.be/f67ol8LD77s)
 
@@ -80,6 +80,8 @@ Grafana Web UI 3000/tcp ─────┼────┤   192.168.42.10/26 ├
 * Assign the role `ROLE_FILESYSTEM_EDITOR` to the `admin`, which allows you to edit configuration files through the web user interface.
 * If you want to start from scratch, run `docker compose down -v`, it will delete the database and the configuration files.
   You can start again with `docker compose up -d` afterwards.
+* Ad-hoc data collection for a node: `opennms:collect -l Default -n 4 org.opennms.netmgt.collectd.SnmpCollector 192.168.42.34`
+* [PGtune](https://pgtune.leopard.in.ua) tool for generating a configuration in PostgreSQL
 
 
 ### Task 1: Provision the three servers, linux-01, linux-02 and linux-03
