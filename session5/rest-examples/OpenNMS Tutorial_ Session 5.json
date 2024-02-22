@@ -1,0 +1,84 @@
+{
+  "name": "OpenNMS Tutorial: Session 5",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Measurements - Node CPU Raw",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:8980/opennms/rest/measurements/node%5B6%5D.nodeSnmp%5B%5D/CpuRawUser?start=-7200000&maxrows=30&aggregation=AVERAGE",
+        "method": "GET",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "basic",
+          "basic": {
+            "username": "admin",
+            "password": "admin"
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": [
+          {
+            "name": "start",
+            "value": "-7200000",
+            "enabled": true
+          },
+          {
+            "name": "maxrows",
+            "value": "30",
+            "enabled": true
+          },
+          {
+            "name": "aggregation",
+            "value": "AVERAGE",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "http",
+      "name": "Measurements complex",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:8980/opennms/rest/measurements",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"start\": 1708560000000,\n    \"end\": 1708561728000,\n    \"step\": 10000,\n    \"maxrows\": 1600,\n    \"source\": [\n        {\n            \"aggregation\": \"AVERAGE\",\n            \"attribute\": \"ifHCInOctets\",\n            \"label\": \"ifHCInOctets\",\n            \"resourceId\": \"nodeSource[linux-server:linux-01].interfaceSnmp[eth0-0242c0a82a20]\",\n            \"transient\": \"false\" \n        },\n        {\n            \"aggregation\": \"AVERAGE\",\n            \"attribute\": \"ifHCOutOctets\",\n            \"label\": \"ifHCOutOctets\",\n            \"resourceId\": \"nodeSource[linux-server:linux-01].interfaceSnmp[eth0-0242c0a82a20]\",\n            \"transient\": \"true\" \n        }\n    ],\n    \"expression\": [\n        {\n            \"label\": \"ifHCOutOctetsNeg\",\n            \"value\": \"-1.0 * ifHCOutOctets\",\n            \"transient\": \"false\" \n        }\n    ]\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "basic",
+          "basic": {
+            "username": "admin",
+            "password": "admin"
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    }
+  ],
+  "environments": []
+}

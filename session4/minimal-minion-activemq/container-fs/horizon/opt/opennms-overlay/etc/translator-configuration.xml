@@ -158,6 +158,19 @@
          </mappings>
       </event-translation-spec>
 
+      <event-translation-spec uei="uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/panMotor-clear">
+         <mappings>
+            <mapping preserve-snmp-data="false">
+            
+               <!-- you need to change this to look up the nodeid from the nodelabel -->
+               <assignment name="nodeid" type="field">
+               <value type="constant" result="5" />
+               </assignment>
+
+            </mapping>
+         </mappings>
+      </event-translation-spec>
+
    </translation>
 
 </event-translator-configuration>

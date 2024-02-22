@@ -107,14 +107,14 @@
       <include-collection dataCollectionGroup="ejn"/>
    </snmp-collection>
 
-   <snmp-collection name="tutorial-snmp-collection" snmpStorageFlag="select">
-      <rrd step="30">
-         <rra>RRA:AVERAGE:0.5:1:20160</rra>
-         <rra>RRA:AVERAGE:0.5:12:14880</rra>
-         <rra>RRA:AVERAGE:0.5:288:3660</rra>
-         <rra>RRA:MAX:0.5:288:3660</rra>
-         <rra>RRA:MIN:0.5:288:3660</rra>
+   <snmp-collection name="exercise-5.2-snmp-collection" snmpStorageFlag="select">
+      <rrd step="300">
+         <rra>RRA:AVERAGE:0.5:1:2016</rra>
+         <rra>RRA:AVERAGE:0.5:12:1488</rra>
+         <rra>RRA:AVERAGE:0.5:288:366</rra>
+         <rra>RRA:MAX:0.5:288:366</rra>
+         <rra>RRA:MIN:0.5:288:366</rra>
       </rrd>
-      <include-collection dataCollectionGroup="tutorial-snmp-collection-group"/>
+      <include-collection dataCollectionGroup="exercise_5.2-group"/>
    </snmp-collection>
 </datacollection-config>

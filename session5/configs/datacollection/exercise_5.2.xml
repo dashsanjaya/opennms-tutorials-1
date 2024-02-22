@@ -1,15 +1,15 @@
-<datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection" name="tutorial-snmp-collection-group">
-    <group name="host-resources-storage" ifType="all">
+<datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection" name="exercise_5.2-group">
+    <group name="exercise_5.2-host-resources-storage" ifType="all">
         <mibObj oid=".1.3.6.1.2.1.25.2.3.1.2" instance="hrStorageIndex" alias="hrStorageType" type="string"/>
         <mibObj oid=".1.3.6.1.2.1.25.2.3.1.3" instance="hrStorageIndex" alias="hrStorageDescr" type="string"/>
         <mibObj oid=".1.3.6.1.2.1.25.2.3.1.4" instance="hrStorageIndex" alias="hrStorageAllocUnits" type="gauge"/>
         <mibObj oid=".1.3.6.1.2.1.25.2.3.1.5" instance="hrStorageIndex" alias="hrStorageSize" type="gauge"/>
         <mibObj oid=".1.3.6.1.2.1.25.2.3.1.6" instance="hrStorageIndex" alias="hrStorageUsed" type="gauge"/>
     </group>
-    <systemDef name="Tutorial-SNMP-System">
+    <systemDef name="Exercise-5.1-SNMP-System">
         <sysoid>.1.3.6.1.4.1.61509.42.1</sysoid>
         <collect>
-            <includeGroup>host-resources-storage</includeGroup>
+            <includeGroup>exercise_5.2-host-resources-storage</includeGroup>
         </collect>
     </systemDef>
 </datacollection-group>

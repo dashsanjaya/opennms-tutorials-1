@@ -111,5 +111,173 @@ docker compose exec core ls share/rrd/snmp/fs/linux-server/linux-01
 
 ### Task 3: Create RRD graph definition to visualise the metric
 
-- [ ] Create a custom graph definiton from the `snmp-graph.properties.d` directory
+- [ ] Create a custom graph definition from the `snmp-graph.properties.d` directory
 - [ ] Verify if you can see the graph in the Node Level Performance data
+
+## Requested topics from last session on Tuesday
+
+### Question: How can we change the timezone formatting in the web user interface? The default is not very user friendly.
+Answer: Set the `org.opennms.ui.datettimeformat` property
+
+Link to Formatting instructions: [DataTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+```
+opennms@e45dfa7efd9c:~$ cat etc/opennms.properties.d/timeformat.properties
+org.opennms.ui.datettimeformat=yyyy-MM-dd HH:mm:ss (z)
+```
+
+### Controlling data collections
+
+- [ ] Limit nodes from SNMP data collection based on a surveillance category `Collect-Enabled`
+
+File: `etc/collectd-configuration.xml`
+```xml
+<package name="example1" remote="false">
+  <filter>categoryName == 'Collect-Enabled'</filter>
+  <include-range begin="1.1.1.1" end="254.254.254.254"/>
+  <include-range begin="::1" end="ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff"/>
+  ...
+```
+
+- [ ] Assign surveillance category `Collect-Enabled` to `linux-01 and verify the collection packages in the web user interface all three linux nodes
+- [ ] Change the data collection frequency and how they relate to collection packages and RRD/JRobin files
+- [ ] Assign node `linux-03` to the surveillance category `Collect-10s`
+- [ ] Create a new collection set `default-10s` in the datacollection-config.xml, RRDTool and JRobin limitations
+- [ ] Add a second SNMP collection package with the collection interval 10 sec instead of 5 min.
+
+File: `etc/collectd-configuration.xml`
+```xml
+<package name="collect-10s" remote="false">
+  <filter>categoryName == 'Collect-10s'</filter>
+  <include-range begin="1.1.1.1" end="254.254.254.254"/>
+  <include-range begin="::1" end="ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff"/>
+  <service name="SNMP" interval="10000" user-defined="false" status="on">
+    <parameter key="collection" value="default-10s"/>
+    <parameter key="thresholding-enabled" value="true"/>
+  </service>
+</package>
+```
+
+IMPORTANT: To apply the settings Collectd needs a reload when a category was changed in the inventory
+
+- [ ] Reload Collectd configuration with `ssh admin@localhost -p 8101 reload-daemon Collectd`
+- [ ] It seems like we have a bug in 32.0.5 with the filter, as soon one filter applies for a node both collection packages are applied
+
+### Thresholding
+
+- [ ] Create a high threshold for CPU usage higher than 50%
+
+![cpu-user-threshold.png](images%2Fcpu-user-threshold.png)
+
+- [ ] Install the `stress-ng` command on `linux-03` which can be used to simulate a high workload to trigger a threshold exceeded
+
+```bash
+docker compose exec -u root linux-03 apk add --no-cache stress-ng # Install the required package in the linux-03 container
+docker compose exec -u root linux-03 stress-ng -c 1 -l 55 # Simulate ~55% CPU usage
+```
+
+### REST API calls for measurements
+
+```
+curl -u admin http://localhost:8980/opennms/rest/measurements/node%5B6%5D.nodeSnmp%5B%5D/CpuRawUser?start=-7200000&maxrows=30&aggregation=AVERAGE
+```
+
+REST API call examples can be used from `rest-examples` directory using the REST API tool [Bruno](https://www.usebruno.com).
+
+## Exercise 5.2: Collecting from an SNMP Table
+
+### Step 1: Create a resource type for entries in the table
+
+![hr-description.png](images/hr-description.png)
+
+File: `etc/resource-types.d/exercise_5.2.xml`
+
+```xml
+<?xml version="1.0"?>
+<resource-types>
+    <resourceType name="hrStorageIndex" label="Host Resources Storage" resourceLabel="${hrStorageDescr}">
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+        <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+            <parameter key="sibling-column-name" value="hrStorageDescr"/>
+            <parameter key="replace-first" value="s/^-$/_root_fs/"/>
+            <parameter key="replace-all" value="s/^-//"/>
+            <parameter key="replace-all" value="s/\s//"/>
+            <parameter key="replace-all" value="s/:\\.*//"/>
+        </storageStrategy>
+    </resourceType>
+</resource-types>
+```
+
+### Step 2: Create data-collection group
+
+Define which metrics you want to collect on which SNMP agent, in our case identified by system object ID: `.1.3.6.1.4.1.61509.42.1`
+
+![hr-entry.png](images/hr-entry.png)
+
+File: `etc/datacollection/exercise_5.2.xml`
+
+```xml
+<datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection" name="exercise_5.2-group">
+  <group name="exercise_5.2-host-resources-storage" ifType="all">
+    <mibObj oid=".1.3.6.1.2.1.25.2.3.1.2" instance="hrStorageIndex" alias="hrStorageType" type="string"/>
+    <mibObj oid=".1.3.6.1.2.1.25.2.3.1.3" instance="hrStorageIndex" alias="hrStorageDescr" type="string"/>
+    <mibObj oid=".1.3.6.1.2.1.25.2.3.1.4" instance="hrStorageIndex" alias="hrStorageAllocUnits" type="gauge"/>
+    <mibObj oid=".1.3.6.1.2.1.25.2.3.1.5" instance="hrStorageIndex" alias="hrStorageSize" type="gauge"/>
+    <mibObj oid=".1.3.6.1.2.1.25.2.3.1.6" instance="hrStorageIndex" alias="hrStorageUsed" type="gauge"/>
+  </group>
+  <systemDef name="Exercise-5.1-SNMP-System">
+    <sysoid>.1.3.6.1.4.1.61509.42.1</sysoid>
+    <collect>
+      <includeGroup>exercise_5.2-host-resources-storage</includeGroup>
+    </collect>
+  </systemDef>
+</datacollection-group>
+
+```
+
+### Step 3: Associate a data collection group to an SNMP collection
+
+File: `etc/datacollection-config.xml`
+
+```xml
+<snmp-collection name="exercise-5.2-snmp-collection" snmpStorageFlag="select">
+  <rrd step="300">
+    <rra>RRA:AVERAGE:0.5:1:20160</rra>
+    <rra>RRA:AVERAGE:0.5:12:14880</rra>
+    <rra>RRA:AVERAGE:0.5:288:3660</rra>
+    <rra>RRA:MAX:0.5:288:3660</rra>
+    <rra>RRA:MIN:0.5:288:3660</rra>
+  </rrd>
+  <include-collection dataCollectionGroup="exercise_5.2-group"/>
+</snmp-collection>
+```
+
+### Step 4: Define an SNMP collection service with the SNMP collection
+
+File: `etc/collectd-configuration.xml`
+
+```xml
+<package name="Exercise-5.2-SNMP-Package" remote="false">
+  <filter>IPADDR != '0.0.0.0'</filter>
+  <include-range begin="1.1.1.1" end="254.254.254.254"/>
+  <include-range begin="::1" end="ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff"/>
+  <service name="SNMP-Custom-Agent" interval="30000" user-defined="false" status="on">
+    <parameter key="collection" value="exercise-5.2-snmp-collection"/>
+    <parameter key="thresholding-enabled" value="true"/>
+  </service>
+</package>
+```
+
+### Step 5: Verify data collection
+
+```
+docker compose exec core ls share/rrd/snmp/fs/linux-server/linux-01
+```
+
+## Exercise 5.3:  Compiling a MIB for data collection
+
+- [ ] Upload the MIBS from the `mibs` directory into the MIB compiler using the web interface, compile the MIBs in the correct dependency order
+  - SNMPv2-SMI.mib
+  - SNMPv2-TC.mib
+  - UCD-SNMP-MIB.mib
+- [ ] Generate a data collection configuration from the UCD-SNMP-MIB
+- [ ] Investigate and discuss the generated configuration files and graph defintions (`datacollection/UCD-SNMP-MIB.xml` and `snmp-graph.properties.d/UCD-SNMP-MIB.properties`)
