@@ -6,7 +6,16 @@
 
 This final session will pull together what we have learnt and introduce a few new topics.
 
-In this example we will introduce grafana and an nginx proxy in a revised [docker-compose.yaml](../session7/minimal-minion-activemq/docker-compose.yaml)
+This session covers
+* HTTPS terminating proxy for OpenNMS using Nginx
+* Nginx  monitoring using HttpDataCollector
+* Business Service Monitoring
+* Brief introduction to Drools
+* Brief introduction to Scriptd
+
+[Session 7 Video](https://youtu.be/-0Io3K9Tzjc)
+
+In this example we will introduce grafana and an nginx proxy in a revised netowrk configuration [docker-compose.yaml](../session7/minimal-minion-activemq/docker-compose.yaml)
 
 ![alt text](../session7/images/examplenetwork3.png "Figure examplenetwork3.png")
 
@@ -59,5 +68,14 @@ THe following diagram illustrates creating the nginx capture groups
 
 ![alt text](../session7/images/TestingNginxRegex.png "Figure TestingNginxRegex.png")
 
+## Grafana
+
+[Exercise-7-1](../session7/Exercise-7-1.md) Walks through creating a simple Grafana Dashboard.
+
+## Business Service Monitor
+
+The [Business Service Monitor]([https://docs.opennms.com/horizon/33/operation/deep-dive/events/event-translator.html](https://docs.opennms.com/horizon/32/operation/deep-dive/bsm/introduction.html)) allows a service topology to be created which associates alarms and service outages from a set of nodes in order to calculate the business impact of detected problems.
+
+[Exercise-7-2](../session7/Exercise-7-2.md) walks through the process of creating a business service monitoring configuration for the cameras monitored in [Exercise-4-1](../session4/Exercise-4-1.md).
 
 
